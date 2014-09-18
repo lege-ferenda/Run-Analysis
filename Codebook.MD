@@ -106,6 +106,41 @@ From the 563 variables, we are only concerned for those with "mean" and "std" me
 
 After dropping the  needless variables, we come up with a new data frame with 10.299 observtions and 88 variables.
 
+The original names have been transformed so they can be more typing friendly and human readable. The new names have only lower case characters and also the "()" have been removed.
+
+ [1] "subject"                              "activity"                             "tbodyacc-mean-x"                     
+ [4] "tbodyacc-mean-y"                      "tbodyacc-mean-z"                      "tgravityacc-mean-x"                  
+ [7] "tgravityacc-mean-y"                   "tgravityacc-mean-z"                   "tbodyaccjerk-mean-x"                 
+[10] "tbodyaccjerk-mean-y"                  "tbodyaccjerk-mean-z"                  "tbodygyro-mean-x"                    
+[13] "tbodygyro-mean-y"                     "tbodygyro-mean-z"                     "tbodygyrojerk-mean-x"                
+[16] "tbodygyrojerk-mean-y"                 "tbodygyrojerk-mean-z"                 "tbodyaccmag-mean"                    
+[19] "tgravityaccmag-mean"                  "tbodyaccjerkmag-mean"                 "tbodygyromag-mean"                   
+[22] "tbodygyrojerkmag-mean"                "fbodyacc-mean-x"                      "fbodyacc-mean-y"                     
+[25] "fbodyacc-mean-z"                      "fbodyacc-meanfreq-x"                  "fbodyacc-meanfreq-y"                 
+[28] "fbodyacc-meanfreq-z"                  "fbodyaccjerk-mean-x"                  "fbodyaccjerk-mean-y"                 
+[31] "fbodyaccjerk-mean-z"                  "fbodyaccjerk-meanfreq-x"              "fbodyaccjerk-meanfreq-y"             
+[34] "fbodyaccjerk-meanfreq-z"              "fbodygyro-mean-x"                     "fbodygyro-mean-y"                    
+[37] "fbodygyro-mean-z"                     "fbodygyro-meanfreq-x"                 "fbodygyro-meanfreq-y"                
+[40] "fbodygyro-meanfreq-z"                 "fbodyaccmag-mean"                     "fbodyaccmag-meanfreq"                
+[43] "fbodybodyaccjerkmag-mean"             "fbodybodyaccjerkmag-meanfreq"         "fbodybodygyromag-mean"               
+[46] "fbodybodygyromag-meanfreq"            "fbodybodygyrojerkmag-mean"            "fbodybodygyrojerkmag-meanfreq"       
+[49] "angle(tbodyaccmean,gravity)"          "angle(tbodyaccjerkmean),gravitymean)" "angle(tbodygyromean,gravitymean)"    
+[52] "angle(tbodygyrojerkmean,gravitymean)" "angle(x,gravitymean)"                 "angle(y,gravitymean)"                
+[55] "angle(z,gravitymean)"                 "tbodyacc-std-x"                       "tbodyacc-std-y"                      
+[58] "tbodyacc-std-z"                       "tgravityacc-std-x"                    "tgravityacc-std-y"                   
+[61] "tgravityacc-std-z"                    "tbodyaccjerk-std-x"                   "tbodyaccjerk-std-y"                  
+[64] "tbodyaccjerk-std-z"                   "tbodygyro-std-x"                      "tbodygyro-std-y"                     
+[67] "tbodygyro-std-z"                      "tbodygyrojerk-std-x"                  "tbodygyrojerk-std-y"                 
+[70] "tbodygyrojerk-std-z"                  "tbodyaccmag-std"                      "tgravityaccmag-std"                  
+[73] "tbodyaccjerkmag-std"                  "tbodygyromag-std"                     "tbodygyrojerkmag-std"                
+[76] "fbodyacc-std-x"                       "fbodyacc-std-y"                       "fbodyacc-std-z"                      
+[79] "fbodyaccjerk-std-x"                   "fbodyaccjerk-std-y"                   "fbodyaccjerk-std-z"                  
+[82] "fbodygyro-std-x"                      "fbodygyro-std-y"                      "fbodygyro-std-z"                     
+[85] "fbodyaccmag-std"                      "fbodybodyaccjerkmag-std"              "fbodybodygyromag-std"                
+[88] "fbodybodygyrojerkmag-std"  
+
+
+
 
 
 
