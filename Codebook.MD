@@ -1,7 +1,7 @@
 Codebook Structure:
 1. Intro
 2. Process
-3.
+3. Cration of the new "tidy" dataset.
 
 
 
@@ -104,6 +104,18 @@ After assigning the names to the 561 variables, the two remaining variables (fro
 
 From the 563 variables, we are only concerned for those with "mean" and "std" measurements. So, we keep only them and drop the rest of the variables except variables "subject" and "activity".
 
+Variable "subject" stands for the Subject Id of the experiment, and variable "activity" takes only values from 1 to 6 indicating the nature of the activity the subject of the experiment performed. 
+
+Specifically, for the variable "activity" there are six activity labels:
+1 WALKING
+2 WALKING_UPSTAIRS
+3 WALKING_DOWNSTAIRS
+4 SITTING
+5 STANDING
+6 LAYING
+
+The variable transformed to a factor (and then back to data.frame) so its values are no more 1-6, but WALKING, SITTING etc..
+
 After dropping the  needless variables, we come up with a new data frame with 10.299 observtions and 88 variables.
 
 The original names have been transformed so they can be more typing friendly and human readable. The new names have only lower case characters and also the "()" have been removed.
@@ -138,6 +150,83 @@ The original names have been transformed so they can be more typing friendly and
 [82] "fbodygyro-std-x"                      "fbodygyro-std-y"                      "fbodygyro-std-z"                     
 [85] "fbodyaccmag-std"                      "fbodybodyaccjerkmag-std"              "fbodybodygyromag-std"                
 [88] "fbodybodygyrojerkmag-std"  
+
+
+3. Creating a new "tidy" data set with the average of each variable for each activity and each subject.
+
+In this step, a second (and independent) dataset is created with only the observations of about "mean", "std", as well as "subject" and "activity". Overall, 88 variables and 180 observations. It is named as "DF4"
+
+The new data frame is grouped by (and arranged) "subject" and "activity" to make it possible to calculate the mean value of every variable for every group (combination of subject and activity.)
+
+The name of the variables have benn changed for the previous dataset, and all have now the prefix "avg-" to signify that now they are not the same as before. 
+
+Abreviations: avg = average
+              acc = acceleration
+              gyro = gyroscope
+              t    = time domain signals  ( "t" in the beginning of the name, e.g "tbodyacc")
+              f    = frequency domain signals ("f" in the beginning of the name, e.g "fbodygyro")
+              mean = mean value
+              std  = standard deviation
+              
+
+This is the list with new variables:
+ [1] "subject"                                   "activity"                            
+ [3] "avg-tbodyacc-mean-x"                      "avg-tbodyacc-mean-y"                     
+ [5] "avg-tbodyacc-mean-z"                      "avg-tgravityacc-mean-x"                  
+ [7] "avg-tgravityacc-mean-y"                   "avg-tgravityacc-mean-z"                  
+ [9] "avg-tbodyaccjerk-mean-x"                  "avg-tbodyaccjerk-mean-y"                 
+[11] "avg-tbodyaccjerk-mean-z"                  "avg-tbodygyro-mean-x"                    
+[13] "avg-tbodygyro-mean-y"                     "avg-tbodygyro-mean-z"                    
+[15] "avg-tbodygyrojerk-mean-x"                 "avg-tbodygyrojerk-mean-y"                
+[17] "avg-tbodygyrojerk-mean-z"                 "avg-tbodyaccmag-mean"                    
+[19] "avg-tgravityaccmag-mean"                  "avg-tbodyaccjerkmag-mean"                
+[21] "avg-tbodygyromag-mean"                    "avg-tbodygyrojerkmag-mean"               
+[23] "avg-fbodyacc-mean-x"                      "avg-fbodyacc-mean-y"                     
+[25] "avg-fbodyacc-mean-z"                      "avg-fbodyacc-meanfreq-x"                 
+[27] "avg-fbodyacc-meanfreq-y"                  "avg-fbodyacc-meanfreq-z"                 
+[29] "avg-fbodyaccjerk-mean-x"                  "avg-fbodyaccjerk-mean-y"                 
+[31] "avg-fbodyaccjerk-mean-z"                  "avg-fbodyaccjerk-meanfreq-x"             
+[33] "avg-fbodyaccjerk-meanfreq-y"              "avg-fbodyaccjerk-meanfreq-z"             
+[35] "avg-fbodygyro-mean-x"                     "avg-fbodygyro-mean-y"                    
+[37] "avg-fbodygyro-mean-z"                     "avg-fbodygyro-meanfreq-x"                
+[39] "avg-fbodygyro-meanfreq-y"                 "avg-fbodygyro-meanfreq-z"                
+[41] "avg-fbodyaccmag-mean"                     "avg-fbodyaccmag-meanfreq"                
+[43] "avg-fbodybodyaccjerkmag-mean"             "avg-fbodybodyaccjerkmag-meanfreq"        
+[45] "avg-fbodybodygyromag-mean"                "avg-fbodybodygyromag-meanfreq"           
+[47] "avg-fbodybodygyrojerkmag-mean"            "avg-fbodybodygyrojerkmag-meanfreq"       
+[49] "avg-angle(tbodyaccmean,gravity)"          "avg-angle(tbodyaccjerkmean),gravitymean)"
+[51] "avg-angle(tbodygyromean,gravitymean)"     "avg-angle(tbodygyrojerkmean,gravitymean)"
+[53] "avg-angle(x,gravitymean)"                 "avg-angle(y,gravitymean)"                
+[55] "avg-angle(z,gravitymean)"                 "avg-tbodyacc-std-x"                      
+[57] "avg-tbodyacc-std-y"                       "avg-tbodyacc-std-z"                      
+[59] "avg-tgravityacc-std-x"                    "avg-tgravityacc-std-y"                   
+[61] "avg-tgravityacc-std-z"                    "avg-tbodyaccjerk-std-x"                  
+[63] "avg-tbodyaccjerk-std-y"                   "avg-tbodyaccjerk-std-z"                  
+[65] "avg-tbodygyro-std-x"                      "avg-tbodygyro-std-y"                     
+[67] "avg-tbodygyro-std-z"                      "avg-tbodygyrojerk-std-x"                 
+[69] "avg-tbodygyrojerk-std-y"                  "avg-tbodygyrojerk-std-z"                 
+[71] "avg-tbodyaccmag-std"                      "avg-tgravityaccmag-std"                  
+[73] "avg-tbodyaccjerkmag-std"                  "avg-tbodygyromag-std"                    
+[75] "avg-tbodygyrojerkmag-std"                 "avg-fbodyacc-std-x"                      
+[77] "avg-fbodyacc-std-y"                       "avg-fbodyacc-std-z"                      
+[79] "avg-fbodyaccjerk-std-x"                   "avg-fbodyaccjerk-std-y"                  
+[81] "avg-fbodyaccjerk-std-z"                   "avg-fbodygyro-std-x"                     
+[83] "avg-fbodygyro-std-y"                      "avg-fbodygyro-std-z"                     
+[85] "avg-fbodyaccmag-std"                      "avg-fbodybodyaccjerkmag-std"             
+[87] "avg-fbodybodygyromag-std"                 "avg-fbodybodygyrojerkmag-std" 
+
+In the new "tidy" dataset the values of the variables are the mean value for  each combination of subject and activity.
+
+That means that in the previous dataset, for example the variable "tbodyacc-mean-x" for subject 1 and activity WALKING, had 95 observations. 
+
+In the new dataset, the variable "avg-tbodyacc-mean-x"  calculates the average value (mean) of those 95 observations. The same logic applies for every variable in the "DF4' dataset.
+
+Finally, running the script run-analysis.R will produce a .txt ("run_analysis.txt") that will be located in your R's working directory.
+
+Plese keep in mind that for running the script you have to unzip the original dataset in your working directory.
+
+
+
 
 
 
