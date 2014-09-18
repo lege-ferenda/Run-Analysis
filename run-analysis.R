@@ -1,15 +1,16 @@
-Run-Analysis
-============
+#Run-Analysis (do not forget that the code works only if you have the samsung dataset in your working directory!)
+#============
+
 ## data input
 
-xTest <- read.table("C:/Users/Αγνη/Desktop/coursera/Dataset/test/X_test.txt")
-yTest <- read.table("C:/Users/Αγνη/Desktop/coursera/Dataset/test/y_test.txt")
-xTrain <- read.table("C:/Users/Αγνη/Desktop/coursera/Dataset/train/X_train.txt")
-yTrain <- read.table("C:/Users/Αγνη/Desktop/coursera/Dataset/train/y_train.txt")
-trainSubject <- read.table("C:/Users/Αγνη/Desktop/coursera/Dataset/train/subject_train.txt")
-testSubject <- read.table("C:/Users/Αγνη/Desktop/coursera/Dataset/test/subject_test.txt")
-varFeatures <-  read.table("C:/Users/Αγνη/Desktop/coursera/Dataset/features.txt")
-actLabels <- read.table("C:/Users/Αγνη/Desktop/coursera/Dataset/activity_labels.txt")
+xTest <- read.table("UCI HAR Dataset/test/X_test.txt")
+yTest <- read.table("UCI HAR Dataset/test/y_test.txt")
+xTrain <- read.table("UCI HAR Dataset/train/X_train.txt")
+yTrain <- read.table("UCI HAR Dataset/train/y_train.txt")
+trainSubject <- read.table("UCI HAR Dataset/train/subject_train.txt")
+testSubject <- read.table("UCI HAR Dataset/test/subject_test.txt")
+varFeatures <-  read.table("UCI HAR Dataset/features.txt")
+actLabels <- read.table("UCI HAR Dataset/activity_labels.txt")
 
 ## merging data (sets) in a single data frames
 
@@ -71,11 +72,13 @@ names(DF2) <- gsub("\\()", "", names(DF2))
 DF2 <- arrange(DF2, `subject`,`activity`)  
 DF3 <- group_by(DF2,subject, activity)    
 DF4 <- summarise_each(DF3, funs(mean))
-        
-        
+
+
 ## exporting a .txt using the write.table function
 
 write.table(DF4,file =  "run_analysis.txt", row.names = FALSE)
+
+
 
 
 
