@@ -1,5 +1,6 @@
-#Run-Analysis (do not forget that the code works only if you have the samsung dataset in your working directory!)
-#============
+
+#Run Analysis
+==============
 
 ## data input
 
@@ -72,13 +73,11 @@ names(DF2) <- gsub("\\()", "", names(DF2))
 DF2 <- arrange(DF2, `subject`,`activity`)  
 DF3 <- group_by(DF2,subject, activity)    
 DF4 <- summarise_each(DF3, funs(mean))
+colnames(DF4) <- paste0("avg-",colnames(DF4))
 
 
-## exporting a .txt using the write.table function
+#exporting a .txt using the write.table function
 
 write.table(DF4,file =  "run_analysis.txt", row.names = FALSE)
-
-
-
 
 
