@@ -1,7 +1,7 @@
 Codebook Structure:
 1. Intro
 2. Process
-3. Cration of the new "tidy" dataset.
+3. Creation of the new "tidy" dataset.
 
 
 
