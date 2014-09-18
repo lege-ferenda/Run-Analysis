@@ -3,11 +3,7 @@ Codebook Structure:
 2. Process
 3. Creation of the new "tidy" dataset.
 
-
-
-
-
-1. INTRO
+======1. INTRO
 
 The codebook describes the transformation on "Human Activity Recognition Using Smartphones Dataset" (Version 1.0), a dataset which has been produced by Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
 
@@ -18,7 +14,7 @@ The original form of the dataset can be found here : https://d396qusza40orc.clou
 
 A full description is available at the site where the data was obtained: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
-2. PROCESS
+======2. PROCESS
 
 A. Data Input
 
@@ -152,7 +148,7 @@ The original names have been transformed so they can be more typing friendly and
 [88] "fbodybodygyrojerkmag-std"  
 
 
-3. Creating a new "tidy" data set with the average of each variable for each activity and each subject.
+======3. Creating a new "tidy" data set with the average of each variable for each activity and each subject.
 
 In this step, a second (and independent) dataset is created with only the observations of about "mean", "std", as well as "subject" and "activity". Overall, 88 variables and 180 observations. It is named as "DF4"
 
