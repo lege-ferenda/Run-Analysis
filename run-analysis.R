@@ -79,5 +79,5 @@ colnames(DF4) <- paste0("avg-",colnames(DF4))
 #exporting a .txt using the write.table function
 
 write.table(DF4,file =  "run_analysis.txt", row.names = FALSE)
-
+print(DF4)
 
