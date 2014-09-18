@@ -14,4 +14,4 @@ The process in general terms is following the above steps:
 5.Calculates for every variable the mean for each combination of subject and activity.
 6.Exports the result in a .txt format file
 
-For more details about the variables and the process of clening the original data, please see the Codebook, located in the Run Analysis repo.
+For more details about the variables and the process of cleaning the original data, please see the Codebook, located in the Run Analysis repo.
