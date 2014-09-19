@@ -4,7 +4,7 @@ Run-Analysis
 The purpose of the code located in run-analysis.R is to "clean" the data coming from "Human Activity Recognition Using Smartphones Dataset", and produce a single data frame only with the measurements concerning mean values as well as standard deviation. 
 In the end it calculates and prints the mean for each combination of subject and activity for those variables.
 
-The process in general terms is following the above steps: 
+The process in general terms is following the listed steps: 
 
 1.load the data into R
 2.merge them in a single data frame
