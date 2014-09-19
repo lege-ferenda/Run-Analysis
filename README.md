@@ -6,8 +6,8 @@ In the end it calculates and prints the mean for each combination of subject and
 
 The process in general terms is following the listed steps: 
 
-1.load the data into R
-2.merge them in a single data frame
+1.Load the data into R
+2.Merge them in a single data frame
 3.Keeping only the variables about mean and std
 3.Renaming the variables names to a more typing friendly and human readable format
 4.Creates a second data set, grouped by Subject and Activity
